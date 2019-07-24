@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'diary/base.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Add Entry</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark py-2 navi">
+        <!-- Navbar content -->
+        <p class="font-weight-bold py-1" style="color:beige;font-size: 40px;text-align: center">DearO.</p>
+       
+  
+      </nav>
+
+      <form method='POST'>
+          <form method="POST">
+                <div class="form-group">
+                    {% csrf_token %}
+                            <legend class='text-center'>
+                                Add A New Entry Here.
+                            </legend>
+                            <p class='text-center'><b>Mood : </b></p>
+                            <div class="col-xs-4 text-center pt-0 pb-1">
+                 
+                                    {{form.mood}}
+                                
+                            </div>
+                            <p class='text-center'><b>Title : </b></p>
+                            <div class="col-xs-4 text-center pt-2">
+                        
+                                    {{form.title}}
+                                
+                            </div>
+                            <p class='text-center '><b>Content : </b></p>
+                            <div class="col-xs-4 text-center pt-2">
+    
+                                    {{form.text}}
+                                
+                            </div>
+                            
+                            
+                            <div class="col-xs-4 text-center pt-2">
+                                <button class="btn btn-outline-dark" type="submit">Add</button>
+                                
+                            </div>
+                            
+                    
+                </div>
+            </form>
+
+
+
+      </form>
+
+
+
+</body>
+</html>

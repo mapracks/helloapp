@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'diary/base.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Register</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark py-2 navi">
+        <!-- Navbar content -->
+        <p class="font-weight-bold py-1" style="color:beige;font-size: 40px;text-align: center">DearO.</p>
+       
+  
+      </nav>
+    <form method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+                    <h1 align='center'>Register.</h1>
+                    <div class="col-xs-4 text-center pt-5">
+                        
+                            <span><b>Username : </b></span>
+
+                            {{form.username}}
+                        
+                    </div>
+                    <div class="col-xs-4 text-center pt-3">
+                        
+                            <span><b>Email : </b></span>
+
+                            {{form.email}}
+                        
+                    </div>
+                    <div class="col-xs-4 text-center pt-3">
+                        
+                            <span><b>Password: </b></span>
+
+                            {{form.password1}}
+                        
+                    </div>
+                    <div class="col-xs-4 text-center pt-3">
+                        <ul type='disc'>
+                            <li>
+                                Your Password should not be Similar To Personal Information
+                            </li>
+                            <li>
+                                Your Password should be 8 Characters long
+                            <li>
+                                Your Password should not Commonly Used Password
+                            </li>
+                            <li>
+                                Your Password Can't Be all Numeric
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    
+                    <div class="col-xs-4 text-center pt-3">
+                        
+                            <span><b>Confirm Password : </b></span>
+
+                            {{form.password2}}
+                        
+                    </div>
+                    
+                    <div class="col-xs-4 text-center pt-2">
+                        <button class="btn btn-outline-dark" type="submit">Submit</button>
+                        
+                    </div>
+                    
+            
+        </div>
+    </form>
+    <div class="col-xs-4 text-center pt-5">
+        Already a diarist?
+        <span>
+            <a href="/login">Login</a>
+        </span>
+    </div>
+              
+</body>
+</html>

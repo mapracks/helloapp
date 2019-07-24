@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'diary/base.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Delete</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark py-2 navi">
+        <!-- Navbar content -->
+        <p class="font-weight-bold py-1" style="color:beige;font-size: 40px;text-align: center">DearO.</p>
+       
+  
+      </nav>
+
+      <form method='POST'>
+          <form method="POST">
+                <div class="form-group">
+                    {% csrf_token %}
+                            
+                          <h2 class="mt-2">Are u Sure to Delete {{object.title}}??</h2>
+                            
+                            
+                            <div class="col-xs-4 text-center pt-2">
+                                <button class="btn btn-outline-danger" type="submit">Delete</button>
+                                <a class="btn btn-outline-danger" href="{% url 'description' object.id %}">Cancel</a>
+                            </div>
+                            
+                    
+                </div>
+            </form>
+
+
+
+      </form>
+
+
+
+</body>
+</html>

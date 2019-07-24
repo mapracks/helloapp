@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family:'Inconsolata', monospace
+
+}
+.container1{
+    margin:auto;
+    
+    text-align: center;
+    color : white;
+}
+
+
+.card{
+    margin-top: 10px ;
+    margin-left : 20px;
+}
+.btn{
+    margin-top:15px;
+}
+.email{
+    margin-top:200px !important;
+}
+.button{
+    position: fixed;
+    margin-left:400px;
+    margin-top:10px;
+    padding:10px;
+}

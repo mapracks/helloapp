@@ -1,0 +1,112 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+   
+    <link rel="stylesheet" href="{% static 'diary/base.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Home</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark py-2 navi">
+      <!-- Navbar content -->
+      <p class="font-weight-bold py-1" style="color:beige;font-size: 40px;text-align: center">DearO.</p>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link btn-secondary rounded-pill mr-2" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-secondary rounded-pill" href="/logout">Logout</a>
+        </li>
+      </ul>
+
+    </nav>  
+
+
+
+      {% if messages %}
+        {% for message in messages %}
+        <div class='alert alert-{{message.tags}}'>
+          {{message}}
+        </div>
+        {% endfor %}
+      {% endif %}
+        
+
+
+        <div class="col-md-12 text-center"> 
+          <a href="/add" class="btn btn-outline-dark col-4">Create New Entry</a>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-8">
+              {% for diary in diarys %}
+              <div class="card w-100">
+                <div class="card-body">
+                  <h5 class="card-title">Entry For : {{diary.date_posted}}</h5>
+                  <p class="card-text">Mood : {{diary.mood}}</p>
+                  <a href="{% url 'description' diary.id %}" class="btn btn-outline-dark col-2">Description</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+
+
+
+
+            <div class="col-sm-4"><div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"> How's was your Day today?</h5>
+                  <p class="card-text">
+                   
+                    <form method="POST">
+                      {% csrf_token %}
+                      {{form.mood}}
+                      <button class="btn btn-outline-dark" type="submit">Submit</button>
+                    </form>
+                  </p>
+                  
+                  
+              
+                </div>
+              </div></div>
+          </div>
+
+          
+
+        
+        
+        
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

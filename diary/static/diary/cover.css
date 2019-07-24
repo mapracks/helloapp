@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
+body {
+    background-image: url("../diary/blank-bookmark-diary-186422.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+    font-family:'Inconsolata', monospace;
+
+}
+h1{
+    
+    color : rgb(51, 42, 42);
+    font-size:60px;
+    margin-top : 5%;
+    font-weight: lighter
+    
+}
+span{
+    color :black;
+    font-weight: bold
+}
+p{
+    font-weight: bold;
+    font-size:30px;
+}
+.p1{
+    margin-bottom:50px;
+}
+.link{
+    margin-top:20px;
+}
+a{
+    text-decoration: none;
+    color : black;
+    border: 1px solid black ;
+    padding: 20px;
+    margin-top: 200px;
+    font-size: 20px;
+    border-radius: 40%;
+    font-weight: bold
+}
+a:hover{
+    background-color: black;
+    color:white;
+}
+.w{
+    font-size: 100px;
+    color:black
+}
+.d{
+    font-size: 100px;
+    color:black
+}

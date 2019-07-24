@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'diary/base.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>login</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark py-2 navi">
+    <!-- Navbar content -->
+    <p class="font-weight-bold py-1" style="color:beige;font-size: 40px;text-align: center">DearO.</p>
+   
+
+  </nav>
+    <form method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+                    <h1 align='center'>Login</h1>
+                    <div class="col-xs-4 text-center pt-5">
+                        
+                            <span><b>Username : </b></span>
+
+                            {{form.username}}
+                        
+                    </div>
+            
+                    <div class="col-xs-4 text-center pt-3">
+                        
+                            <span><b>Password: </b></span>
+
+                            {{form.password}}
+                        
+                    </div>
+                    
+                    <div class="col-xs-4 text-center pt-2">
+                        <button class="btn btn-outline-dark" type="submit">Login</button>
+                        
+                    </div>
+                    
+            
+        </div>
+    </form>
+    <div class="col-xs-4 text-center pt-5">
+        Not a diarist?
+        <span>
+            <a href="/register">Register</a>
+        </span>
+    </div>
+              
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+   
+    <link rel="stylesheet" href="{% static 'diary/base.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Description</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark py-2 navi">
+      <!-- Navbar content -->
+      <p class="font-weight-bold py-1" style="color:beige;font-size: 40px;text-align: center">DearO.</p>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link btn-secondary rounded-pill mr-2" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-secondary rounded-pill" href="/logout">Logout</a>
+          
+        </li>
+    </ul>
+</nav>  
+<div class="row">
+        <div class="col-sm-8">
+          
+          <div class="card w-100">
+            <div class="card-body">
+              <h5 class="card-title">Entry For : {{object.date_posted}}</h5>
+              <p class="card-text">Mood : {{object.mood}}</p>
+              <p class="card-text">Title : {{object.title}}</p>
+              <p class="card-text">Content : {{object.text}}</p>
+              {% if object.author == user %}
+
+              <a href="{%url 'update' object.id %}" class="btn btn-outline-dark col-1.5">Update</a>
+              
+              <a href="{%url 'homepage'%}" class="btn btn-outline-dark col-1.5">Home</a>
+              <a href="{%url 'delete' object.id %}" class="btn btn-outline-danger col-1.5">Delete</a>
+              {% endif %}
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+
+              
+              
+          
+            </div>
+          </div></div>
+      </div>
+
+      
+
+    
+    
+    
+
+</body>
+</html>
