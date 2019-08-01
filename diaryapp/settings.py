@@ -1,4 +1,4 @@
-import django_heroku
+
 
 
 """
@@ -28,7 +28,7 @@ SECRET_KEY = '(ir0bfdrzy&$m2)a=-l$5plzrssp)f#i&bx_^jfag1!7oi84cu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['159.89.174.70']
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'diaryapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+      'NAME': 'mydb',
+      'USER': 'myuser',
+      'PASSWORD': 'password',
+      'HOST': 'localhost',
+      'PORT': '',
     }
 }
 
@@ -128,4 +132,3 @@ LOGIN_REDIRECT_URL = 'homepage'
 LOGIN_URL = 'login'
 
 
-django_heroku.settings(locals())
